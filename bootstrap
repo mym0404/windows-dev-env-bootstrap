@@ -2,7 +2,14 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco feature enable -n allowGlobalConfirmation
 
 # Install Runtimes
-choco install git nodejs yarn vscode
+choco install git nodejs yarn vscode fzf
 
 # Run git bash
 Start-Process "C:\Program Files\Git\git-bash.exe"
+
+Set-Alias bash "C:\Program Files\Git\git-bash.exe"
+
+# Setup Utilities
+bash -c "curl -sL 'https://raw.githubusercontent.com/mym0404/TeamNote/refs/heads/main/Environment/.bash_profile-windows' -o ~/.bash_profile"
+bash -c "source ~/.bash_profile"
+bash -c "curl -sL 'https://raw.githubusercontent.com/mym0404/TeamNote/refs/heads/main/Environment/.gitconfig' -o ~/.gitconfig"
